@@ -14,6 +14,7 @@ const GitIcon = styled(GithubOutlined)`
 
 const StyledCard = styled(Card)`
     margin-bottom: 16px;
+    min-height: 210px;
     ${({ color }) => color && `border-color:  ${borderColors[color]};`}
 `;
 

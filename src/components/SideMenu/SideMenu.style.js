@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Anchor as AntAnchor, Layout } from 'antd';
+import { Affix, Anchor as AntAnchor, Button, Layout } from 'antd';
 
 export const MainLink = styled.span`
     font-size: 1.5rem;
@@ -28,4 +28,22 @@ export const Anchor = styled(AntAnchor)`
 export const Link = styled(AntAnchor.Link)`
     text-align: right;
     margin-right: 1rem;
+`;
+
+export const MenuButton = styled(Button)`
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+`;
+
+export const MenuContainer = styled(Affix)`
+    ${({ type }) => (type == 'floating') ? `
+        position: absolute;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+        & .ant-anchor-wrapper{
+            margin-right: 0px !important;
+        }
+    ` : ''}
 `;
