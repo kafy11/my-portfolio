@@ -13,7 +13,9 @@ const ExternalLinksContainer = styled(Space)`
   }
 `;
 
-const Link = styled.a`
+const Link = styled.a.attrs(() => ({
+  target: '_blank'
+}))`
     color: ${({ theme }) => theme.palette.siderExternalLinksColor};
 `;
 

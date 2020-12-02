@@ -23,7 +23,7 @@ const ContactSection = () => (
 
         <Space direction="vertical" size={0}>
             <StyledP>Se possível, aproveite um tempo para me contatar e passar um feedback atráves de:</StyledP>
-            <ItemList>Mensagem privada no meu <a href="https://www.linkedin.com/in/kayo-filipe-oliveira-magrini-silva-3a567657/"><b>LinkedIn</b></a></ItemList>
+            <ItemList>Mensagem privada no meu <a href="https://www.linkedin.com/in/kayo-filipe-oliveira-magrini-silva-3a567657/" target="_blank"><b>LinkedIn</b></a></ItemList>
             <OrDivider orientation="left"><Or>ou</Or></OrDivider>
             <ItemList>Envie um email para <a href="mailto:kayofilipe@hotmail.com"><b>kayofilipe@hotmail.com</b></a> </ItemList>
             <OrDivider orientation="left"><Or>ou</Or></OrDivider>

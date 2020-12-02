@@ -41,7 +41,7 @@ const ProjectsSection = () => (
                 repoLink="https://github.com/kafy11/orders-graphql" 
                 color="yellow"
             >
-                <p>Uma API de feita com <b>Python</b> e <b>Flask</b>, que roda dentro de um container <b>Docker</b>, e implementa <b>GraphQL</b> para manipulação e visualização dos dados.</p>
+                <p>Uma API feita com <b>Python</b> e <b>Flask</b>, que roda dentro de um container <b>Docker</b>, e implementa <b>GraphQL</b> para manipulação e visualização dos dados.</p>
             </ProjectCard>
             <ProjectCard 
                 title="Amazon Web Scraper"

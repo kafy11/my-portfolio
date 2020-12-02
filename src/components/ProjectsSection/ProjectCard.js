@@ -37,7 +37,7 @@ const ProjectCard = ({ color, repoLink, title, children }) => (
             extra={(
                 <Space direction="horizontal">
                     <Tooltip title="Abrir repositório">
-                        <a href={repoLink}><GitIcon /></a>
+                        <a href={repoLink} target="_blank"><GitIcon /></a>
                     </Tooltip>
                 </Space>
             )}
