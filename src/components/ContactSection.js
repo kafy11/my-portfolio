@@ -5,12 +5,11 @@ import { HeaderDivider, ItemList, Section, Title } from '.';
 const OrDivider = styled(HeaderDivider)`
     &&{
         margin: 0;
-        color: rgba(0, 0, 0, 0.25);
     }
 `;
 
 const Or = styled.span`
-    color: #000;
+    color: ${({ theme }) => theme.palette.subTextColor};
 `;
 
 const StyledP = styled.p`

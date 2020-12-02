@@ -6,10 +6,6 @@ module.exports = withSass({
     ...withLess({
         lessLoaderOptions: {
             javascriptEnabled: true,
-            modifyVars: { 
-                '@layout-body-background': '#FFF',
-                '@layout-header-background': '#FFF'
-            },
             importLoaders: 0
         },
         cssLoaderOptions: {

@@ -16,6 +16,16 @@ const StyledCard = styled(Card)`
     margin-bottom: 16px;
     min-height: 210px;
     ${({ color }) => color && `border-color:  ${borderColors[color]};`}
+
+    ${({ theme: { palette } }) => `
+        color: ${palette.textColor};
+        background-color: ${palette.cardBodyBackground};
+
+        & .ant-card-head{
+            color: ${palette.textColor};
+            background-color: ${palette.cardHeaderBackground};
+        }
+    `}
 `;
 
 const ProjectCard = ({ color, repoLink, title, children }) => (

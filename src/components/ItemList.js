@@ -11,6 +11,7 @@ export const ArrowIcon = styled(RightOutlined)`
 
 export const Text = styled(Typography.Text)`
     font-size: 16px;
+    color: ${({ theme }) => theme.palette.textColor};
 `;
 
 const ItemList = ({ children }) => <Text><ArrowIcon />{children}</Text>;

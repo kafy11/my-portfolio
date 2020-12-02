@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import { HeaderDivider, ItemList, Section, Title } from '.';
 
 const SubText = styled(Typography.Text)`
-    color: rgba(0, 0, 0, 0.5);
+    color: ${({ theme }) => theme.palette.subTextColor};
     font-size: 14px;
 `;
 
 const StyledB = styled.b`
-    color: #000;
+    color: ${({ theme }) => theme.palette.textColor};
 `;
 
 const ItemSpace = styled(Space).attrs(props => ({

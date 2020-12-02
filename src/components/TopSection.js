@@ -7,6 +7,7 @@ export const SectionTitle = styled(Title)`
     &.ant-typography{
         font-size: 76px;
         margin-bottom: 0.5rem;
+        color: ${({ theme }) => theme.palette.mainTitleColor};
     }
 `;
 

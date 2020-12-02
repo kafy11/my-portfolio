@@ -1,12 +1,14 @@
 import 'antd/dist/antd.less';
-import { ThemeProvider } from 'styled-components';
-import theme from '../src/theme';
+import LightDarkModeProvider from '../src/providers/LightDarkModeProvider';
+import MobileProvider from '../src/providers/MobileProvider';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ThemeProvider theme={theme}>
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <MobileProvider>
+      <LightDarkModeProvider>
+        <Component {...pageProps} />
+      </LightDarkModeProvider>
+    </MobileProvider>
   );
 }
 

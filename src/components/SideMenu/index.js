@@ -1,26 +1,17 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Anchor, Link, MainLink, MenuButton, MenuContainer, Sider } from './SideMenu.style';
 import ExternalLinks from './ExternalLinks';
 import { CloseOutlined, RightOutlined } from '@ant-design/icons';
-
-//cria o media query
-const mql = process.browser && window.matchMedia(`(min-width: 800px)`);
+import { MobileContext } from '../../providers/MobileProvider';
+import ThemeToggle from './ThemeToggle';
 
 function SideMenu() {
-  const [collapsed, setCollapsed] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobile = useContext(MobileContext);
+  const [collapsed, setCollapsed] = useState(isMobile);
 
   useEffect(() => {
-    if (process.browser) {
-      setIsMobile(!mql.matches);
-      setCollapsed(!mql.matches);
-
-      mql.addListener(() => {
-        setIsMobile(!mql.matches);
-        setCollapsed(!mql.matches);
-      });
-    }
-  }, []);
+    setCollapsed(isMobile);
+  }, [isMobile]);
 
   return (
     <>
@@ -53,6 +44,8 @@ function SideMenu() {
           </Anchor>
           
           <ExternalLinks />
+
+          <ThemeToggle />
         </Sider>
       </MenuContainer>
     </>

@@ -8,7 +8,7 @@ const SubTitle = styled(Title)`
     }
 
     &&{
-        color: rgba(0, 0, 0, 0.5);
+        color: ${({ theme }) => theme.palette.subTitleColor};
     }
 `;
 
