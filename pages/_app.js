@@ -1,7 +1,7 @@
 import { IntlProvider } from "react-intl";
 import { useRouter } from "next/router";
 import * as locales from "../src/locales";
-import 'antd/dist/antd.less';
+import 'antd/dist/antd.css';
 import { 
   LightDarkModeProvider, 
   MobileProvider 
