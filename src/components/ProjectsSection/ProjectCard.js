@@ -1,3 +1,4 @@
+import { useIntl } from "react-intl";
 import { Card, Col, Space, Tooltip } from 'antd';
 import styled from 'styled-components';
 import { GithubOutlined } from '@ant-design/icons';
@@ -28,23 +29,28 @@ const StyledCard = styled(Card)`
     `}
 `;
 
-const ProjectCard = ({ color, repoLink, title, children }) => (
-    <Col className="gutter-row" xs={24} md={12} lg={8}>
-        <StyledCard 
-            color={color}
-            type="inner" 
-            title={title}
-            extra={(
-                <Space direction="horizontal">
-                    <Tooltip title="Abrir repositório">
-                        <a href={repoLink} target="_blank"><GitIcon /></a>
-                    </Tooltip>
-                </Space>
-            )}
-        >
-            {children}
-        </StyledCard>
-    </Col>
-);
+const ProjectCard = ({ color, repoLink, title, description }) => {
+    const { formatMessage } = useIntl();
+    const lang = id => formatMessage({ id });
+
+    return (
+        <Col className="gutter-row" xs={24} md={12} lg={8}>
+            <StyledCard 
+                color={color}
+                type="inner" 
+                title={title}
+                extra={(
+                    <Space direction="horizontal">
+                        <Tooltip title={lang('openRepository')}>
+                            <a href={repoLink} target="_blank"><GitIcon /></a>
+                        </Tooltip>
+                    </Space>
+                )}
+            >
+                <p dangerouslySetInnerHTML={{ __html: description}} />
+            </StyledCard>
+        </Col>
+    );
+}
 
 export default ProjectCard;

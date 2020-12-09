@@ -1,3 +1,4 @@
+import { useIntl } from "react-intl";
 import styled from 'styled-components';
 import { Space } from 'antd';
 import { HeaderDivider, ItemList, Section, Title } from '.';
@@ -16,20 +17,27 @@ const StyledP = styled.p`
     font-size: 16px;
 `;
 
-const ContactSection = () => (
-    <Section id="contact-section">
-        <Title level={1}>Contato</Title>
-        <HeaderDivider />
+const ContactSection = () => {
+    const { formatMessage } = useIntl();
+    const lang = id => formatMessage({ id });
 
-        <Space direction="vertical" size={0}>
-            <StyledP>Se possível, aproveite um tempo para me contatar e passar um feedback atráves de:</StyledP>
-            <ItemList>Mensagem privada no meu <a href="https://www.linkedin.com/in/kayo-filipe-oliveira-magrini-silva-3a567657/" target="_blank"><b>LinkedIn</b></a></ItemList>
-            <OrDivider orientation="left"><Or>ou</Or></OrDivider>
-            <ItemList>Envie um email para <a href="mailto:kayofilipe@hotmail.com"><b>kayofilipe@hotmail.com</b></a> </ItemList>
-            <OrDivider orientation="left"><Or>ou</Or></OrDivider>
-            <ItemList>Pelo meu número <b>(11) 94126-9472</b> </ItemList>
-        </Space>
-    </Section>
-);
+    const or = <Or>{lang('or')}</Or>
+
+    return (
+        <Section id="contact-section">
+            <Title level={1}>{lang('contact')}</Title>
+            <HeaderDivider />
+
+            <Space direction="vertical" size={0}>
+                <StyledP>{lang('contactMainLbl')}</StyledP>
+                <ItemList>{lang('privateMsg')}<a href="https://www.linkedin.com/in/kayo-filipe-oliveira-magrini-silva-3a567657/" target="_blank"><b>LinkedIn</b></a></ItemList>
+                <OrDivider orientation="left">{or}</OrDivider>
+                <ItemList>{lang('sendEmail')}<a href="mailto:kayofilipe@hotmail.com"><b>kayofilipe@hotmail.com</b></a> </ItemList>
+                <OrDivider orientation="left">{or}</OrDivider>
+                <ItemList>{lang('callingMe')}<b>{lang('phoneNumber')}</b> </ItemList>
+            </Space>
+        </Section>
+    );
+}
 
 export default ContactSection;

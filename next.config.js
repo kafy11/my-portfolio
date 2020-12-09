@@ -12,6 +12,10 @@ module.exports = withSass({
             importLoaders: 3,
             localIdentName: '[local]___[hash:base64:5]'
         },
+        i18n: {
+            locales: ['en', 'pt'],
+            defaultLocale: 'pt',
+        },
         webpack: (config, { isServer }) => {
             //Make Ant styles work with less
             if (isServer) {

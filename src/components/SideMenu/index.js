@@ -1,11 +1,16 @@
 import { useContext, useEffect, useState } from 'react';
+import { useIntl } from "react-intl";
 import { Anchor, Link, MainLink, MenuButton, MenuContainer, Sider } from './SideMenu.style';
 import ExternalLinks from './ExternalLinks';
 import { CloseOutlined, RightOutlined } from '@ant-design/icons';
 import { MobileContext } from '../../providers/MobileProvider';
 import ThemeToggle from './ThemeToggle';
+import LanguageLinks from './LanguageLinks';
 
 function SideMenu() {
+  const { formatMessage } = useIntl();
+  const lang = id => formatMessage({ id });
+
   const isMobile = useContext(MobileContext);
   const [collapsed, setCollapsed] = useState(isMobile);
 
@@ -16,15 +21,11 @@ function SideMenu() {
   return (
     <>
       <MenuButton 
-        type="link" 
-        shape="circle" 
         icon={<CloseOutlined />} 
         style={{ display: (collapsed) ? 'none' : 'block' }}
         onClick={() => setCollapsed(true)}
       />
       <MenuButton 
-        type="link" 
-        shape="circle" 
         icon={<RightOutlined />} 
         style={{ display: (!collapsed) ? 'none' : 'block' }}
         onClick={() => setCollapsed(false)}
@@ -38,12 +39,14 @@ function SideMenu() {
         >
           <Anchor>
               <Link href="#header-section" title={(<MainLink>Kayo Silva</MainLink>)} />
-              <Link href="#skills-section" title="Skills" />
-              <Link href="#projects-section" title="Projetos" />
-              <Link href="#contact-section" title="Contato" />
+              <Link href="#skills-section" title={lang('skills')} />
+              <Link href="#projects-section" title={lang('projects')} />
+              <Link href="#contact-section" title={lang('contact')} />
           </Anchor>
           
           <ExternalLinks />
+
+          <LanguageLinks />
 
           <ThemeToggle />
         </Sider>

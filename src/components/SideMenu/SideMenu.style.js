@@ -27,7 +27,10 @@ export const MainLink = styled.span`
     font-size: 1.5rem;
 `;
 
-export const MenuButton = styled(Button)`
+export const MenuButton = styled(Button).attrs(props => ({
+    type: 'link',
+    shape: 'circle'
+}))`
     position: fixed;
     top: 0;
     left: 0;
