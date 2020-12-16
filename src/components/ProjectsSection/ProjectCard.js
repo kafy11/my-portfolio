@@ -16,6 +16,7 @@ const GitIcon = styled(GithubOutlined)`
 const StyledCard = styled(Card)`
     margin-bottom: 16px;
     min-height: 210px;
+    cursor: pointer;
     ${({ color }) => color && `border-color:  ${borderColors[color]};`}
 
     ${({ theme: { palette } }) => `
@@ -29,7 +30,7 @@ const StyledCard = styled(Card)`
     `}
 `;
 
-const ProjectCard = ({ color, repoLink, title, description }) => {
+const ProjectCard = ({ color, repoLink, title, desc }) => {
     const { formatMessage } = useIntl();
     const lang = id => formatMessage({ id });
 
@@ -47,7 +48,7 @@ const ProjectCard = ({ color, repoLink, title, description }) => {
                     </Space>
                 )}
             >
-                <p dangerouslySetInnerHTML={{ __html: description}} />
+                <p dangerouslySetInnerHTML={{ __html: lang(desc)}} />
             </StyledCard>
         </Col>
     );

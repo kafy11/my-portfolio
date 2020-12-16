@@ -9,7 +9,7 @@ export const en = {
     drumpadProject: 'Drumpad made with <b>React</b> and <b>Typescript</b> where the user can play sounds using the keyboard or mouse, being possible to loop the sound using the SHIFT key.',
     experience: 'Experience',
     fullStackExperience: '+7 years of experience with Full Stack development',
-    internationProjects: 'International Projects',
+    internationalProjects: 'International Projects',
     mainTasks: 'Main tasks',
     mobileExperience: '+4 years of experience with Hybrid Mobile App development (iOS and Android)',
     oce: 'Oracle Database SQL Certified Expert',

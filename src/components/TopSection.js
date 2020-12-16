@@ -32,7 +32,7 @@ const TopSection = () => {
             <Space direction="vertical">
                 <ItemList>{lang('fullStackExperience')}</ItemList>
                 <ItemList>{lang('mobileExperience')}</ItemList>
-                <ItemList>{lang('internationProjects')}</ItemList>
+                <ItemList>{lang('internationalProjects')}</ItemList>
                 <ItemList>{lang('webOptimization')}</ItemList>
                 <ItemList>{lang('oce')} <a href="https://www.youracclaim.com/badges/f0785f4e-f289-45b4-ba8f-4c5277f80a21/linked_in_profile" target="_blank"><LinkOutlined /></a></ItemList>
             </Space>
