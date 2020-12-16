@@ -22,7 +22,7 @@ export const pt = {
     phpDev: 'Desenvolvimento PHP',
     phpTasks: 'Criação de webservices(Rest e Soap) e back-end para aplicações',
     privateMsg: 'Mensagem privada no meu ',
-    productsData: 'Uma API feita com <b>Python</b> e <b>Flask</b>, que roda dentro de um container <b>Docker</b>, e implementa <b>GraphQL</b> para manipulação e visualização dos dados.',
+    productsAPIProject: 'API feita com <b>Python</b> e <b>Flask</b> que roda dentro de um container <b>Docker</b> e implementa <b>GraphQL</b> para manipulação e visualização dos dados.',
     projects: 'Projetos',
     plsqlChallenge: 'Importador de arquivos dinâmicos com layouts definidos por views do banco',
     plsqlDev: 'Desenvolvimento PL/SQL',
